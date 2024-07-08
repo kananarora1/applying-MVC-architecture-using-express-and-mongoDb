@@ -1,18 +1,24 @@
-const express = require('express');
-const router = express.Router();
-const productControllers = require('../Controllers/productController');
+const router = require("express").Router();
+const productController = require("../Controllers/productController");
 
-// Create Product
-router.post('/api/products', productControllers.postProduct);
 
-// Get all Products
-router.get('/api/products', productControllers.getAllProducts);
+router.post("/", productController.postProduct);
 
-// Get Product by ID
-router.get('/api/products/:id', productControllers.getProductById);
+// get route
 
-// Update Product by ID
-router.put('/api/products/:id', productControllers.updateProduct);
+router.get("/", productController.getAllProducts);
 
-// Delete Product by ID
-router.delete('/api/products/:id', productControllers.deleteProduct);
+// Get product by id
+
+router.get("/:id", productController.getProductById);
+
+// Update product
+
+router.put("/:id", productController.updateProduct);
+
+/// Delete a Resource
+
+router.delete("/:id", productController.deleteProduct);
+
+
+module.exports = router

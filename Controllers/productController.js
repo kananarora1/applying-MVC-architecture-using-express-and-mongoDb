@@ -1,4 +1,4 @@
-const ProductModel = require('../Models/productModel');
+const ProductModel = require('../Models/product');
 
 exports.postProduct = async (req, res) => {
     const body = req.body;
